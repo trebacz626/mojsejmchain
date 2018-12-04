@@ -28,6 +28,7 @@ export class BlockChainApp{
                 done(err);
             }
         })
+        this.test();
         
     }
     test(){
@@ -35,7 +36,7 @@ export class BlockChainApp{
             console.log("testing"+JSON.stringify(job.data));
             done(null);
         });
-        this.queue.create("test",{message:"complete"});
+        this.queue.create("test",{message:"complete"}).save();
     }
 }
 console.log("app");
